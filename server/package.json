@@ -9,6 +9,13 @@
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
     "test": "jest --watchAll"
   },
+  "jest": {
+    "jest": {
+      "globalSetup": "./jest-setup.ts",
+      "globalTeardown": "./jest-teardown.ts",
+      "testEnvironment": "./jest-mongo.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ImadEM21/imadelmahrad.git"
@@ -27,11 +34,13 @@
   },
   "homepage": "https://github.com/ImadEM21/imadelmahrad#readme",
   "dependencies": {
+    "@jest/environment": "^28.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
     "http-errors": "^2.0.0",
+    "mongodb-memory-server": "^8.6.0",
     "mongoose": "^6.3.1",
     "path": "^0.12.7"
   },
@@ -39,10 +48,13 @@
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.1",
-    "@types/node": "^17.0.26",
+    "@types/mongodb-memory-server": "^2.3.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^17.0.35",
     "@types/supertest": "^2.0.12",
     "concurrently": "^7.1.0",
     "jest": "^27.5.1",
+    "jest-environment-node": "^28.1.0",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2",
     "ts-jest": "^27.1.4",
